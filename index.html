@@ -4,7 +4,6 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="src/scss/style.css">
   <link rel="stylesheet" href="scss/style.css">
   <title>Hunger</title>
 </head>
@@ -47,7 +46,9 @@
 			</nav>
 
 
-      <div class="burger-div"></div>
+      <div class="burger-x">
+        <ion-icon name="close-outline"></ion-icon>
+      </div>
 			<button class="burger">
 
 				<svg height="384px" viewBox="0 -53 384 384" width="384px" xmlns="http://www.w3.org/2000/svg">
@@ -104,14 +105,23 @@
 	<script>
 
     let burger = document.querySelector('.burger');
+    let close = document.querySelector('.burger-x');
     let menu = document.querySelector('.header__nav');
 
     burger.onclick = function () {
-      burger.classList.toggle('is_active');
-      menu.classList.toggle('is_active');
+      close.classList.add('is_active');
+      menu.classList.add('is_active');
+    }
+
+    close.onclick = function () {
+      close.classList.remove('is_active');
+      menu.classList.remove('is_active');
     }
 
 	</script>
+
+  <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
 
 </body>
 </html>

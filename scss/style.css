@@ -103,11 +103,22 @@ a {
   padding-top: 10.55556vw;
 }
 
-.burger-div {
+.burger-x {
   display: none;
   width: 2.77778vw;
   height: 2.77778vw;
+  border: none;
   background: transparent;
+  opacity: 0;
+  -webkit-transition: opacity .5s ease;
+  transition: opacity .5s ease;
+}
+
+.burger-x ion-icon {
+  display: block;
+  font-size: 2.77778vw;
+  line-height: 2.77778vw;
+  color: #000;
 }
 
 .burger {
@@ -242,10 +253,16 @@ a {
         -ms-flex-pack: end;
             justify-content: flex-end;
   }
-  .burger-div {
+  .burger-x.is_active {
+    position: absolute;
     display: block;
     width: 9.375vmin;
     height: 9.375vmin;
+    opacity: 1;
+  }
+  .burger-x.is_active ion-icon {
+    font-size: 9.375vmin;
+    line-height: 9.375vmin;
   }
   .burger {
     display: block;
@@ -255,12 +272,6 @@ a {
   .burger svg {
     -webkit-transition: fill .5s ease;
     transition: fill .5s ease;
-  }
-  .burger.is_active {
-    position: absolute;
-  }
-  .burger.is_active svg {
-    fill: #000;
   }
   .hero__title {
     font-size: 18.75vmin;

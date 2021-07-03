@@ -105,13 +105,26 @@ a {
   }
 }
 
-.burger-div {
+.burger-x {
   display: none;
 
   width: vw(40);
   height: vw(40);
 
+  border: none;
   background: transparent;
+
+  opacity: 0;
+
+  transition: opacity .5s ease;
+
+  ion-icon {
+    display: block;
+
+    font-size: vw(40);
+    line-height: vw(40);
+    color: #000;
+  }
 }
 
 .burger {
@@ -259,11 +272,19 @@ a {
     justify-content: flex-end;
   }
 
-  .burger-div {
+  .burger-x.is_active {
+    position: absolute;
     display: block;
 
     width: vmin(30);
     height: vmin(30);
+
+    opacity: 1;
+
+    ion-icon {
+      font-size: vmin(30);
+      line-height: vmin(30);
+    }
   }
 
   .burger {
@@ -273,14 +294,6 @@ a {
 
     svg {
       transition: fill .5s ease;
-    }
-  }
-
-  .burger.is_active {
-    position: absolute;
-
-    svg {
-      fill: #000;
     }
   }
 
